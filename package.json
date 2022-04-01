@@ -1,0 +1,37 @@
+{
+  "name": "@stdlib/math-base-special-frexp",
+  "version": "0.0.0",
+  "description": "Split a double-precision floating-point number into a normalized fraction and an integer power of two.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/math-base-special-frexp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdmath",
+    "math",
+    "mathematics",
+    "frexp",
+    "floating-point",
+    "float64",
+    "float",
+    "double",
+    "dbl",
+    "normalized",
+    "normal",
+    "subnormal",
+    "denormalized",
+    "number",
+    "ieee754"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
