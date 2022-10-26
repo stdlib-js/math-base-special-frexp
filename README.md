@@ -24,46 +24,33 @@ limitations under the License.
 
 > Split a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-frexp
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-frexp = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@umd/browser.js' )
-```
-The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-frexp/tags). For example,
-
-```javascript
-frexp = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@v0.0.7-umd/browser.js' )
+var frexp = require( '@stdlib/math-base-special-frexp' );
 ```
 
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var frexp = require( 'path/to/vendor/umd/math-base-special-frexp/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.frexp;
-})();
-</script>
-```
-
-#### frexp( \[out,] x )
+#### frexp( x )
 
 Splits a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two.
 
@@ -88,20 +75,6 @@ var bool = ( x === frac * pow(2.0, exp) );
 // returns true
 ```
 
-To avoid unnecessary memory allocation, the function supports providing an output (destination) object.
-
-```javascript
-var Float64Array = require( '@stdlib/array-float64' );
-
-var out = new Float64Array( 2 );
-
-var y = frexp( out, 4.0 );
-// returns <Float64Array>[ 0.5, 3 ]
-
-var bool = ( y === out );
-// returns true
-```
-
 If provided positive or negative zero, `NaN`, or positive or negative `infinity`, the function returns a two-element `array` containing the input value and an exponent equal to `0`.
 
 ```javascript
@@ -122,6 +95,22 @@ out = frexp( -Infinity );
 ```
 
 For all other numeric input values, the [absolute value][@stdlib/math/base/special/abs] of the normalized fraction resides on the interval `[0.5,1)`.
+
+#### frexp.assign( x, out, stride, offset )
+
+Splits a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two and assigns results to a provided output array.
+
+```javascript
+var Float64Array = require( '@stdlib/array-float64' );
+
+var out = new Float64Array( 2 );
+
+var y = frexp.assign( 4.0, out, 1, 0 );
+// returns <Float64Array>[ 0.5, 3 ]
+
+var bool = ( y === out );
+// returns true
+```
 
 </section>
 
@@ -160,17 +149,12 @@ For all other numeric input values, the [absolute value][@stdlib/math/base/speci
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-exponent-bias@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var round = require( '@stdlib/math-base-special-round' );
+var pow = require( '@stdlib/math-base-special-pow' );
+var BIAS = require( '@stdlib/constants-float64-exponent-bias' );
+var frexp = require( '@stdlib/math-base-special-frexp' );
 
 var sign;
 var frac;
@@ -198,11 +182,6 @@ for ( i = 0; i < 100; i++ ) {
     }
     console.log( '%d = %d * 2^%d = %d', x, f[ 0 ], f[ 1 ], v );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -262,8 +241,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-base-special-frexp.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-base-special-frexp
 
-[test-image]: https://github.com/stdlib-js/math-base-special-frexp/actions/workflows/test.yml/badge.svg?branch=v0.0.7
-[test-url]: https://github.com/stdlib-js/math-base-special-frexp/actions/workflows/test.yml?query=branch:v0.0.7
+[test-image]: https://github.com/stdlib-js/math-base-special-frexp/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/math-base-special-frexp/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-base-special-frexp/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-frexp?branch=main
@@ -294,11 +273,11 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [ieee754]: https://en.wikipedia.org/wiki/IEEE_754-1985
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/umd
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/ldexp]: https://github.com/stdlib-js/math-base-special-ldexp/tree/umd
+[@stdlib/math/base/special/ldexp]: https://github.com/stdlib-js/math-base-special-ldexp
 
 <!-- </related-links> -->
 
