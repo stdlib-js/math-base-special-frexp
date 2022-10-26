@@ -50,7 +50,7 @@ The [branches.md][branches-url] file summarizes the available branches and displ
 var frexp = require( '@stdlib/math-base-special-frexp' );
 ```
 
-#### frexp( \[out,] x )
+#### frexp( x )
 
 Splits a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two.
 
@@ -75,20 +75,6 @@ var bool = ( x === frac * pow(2.0, exp) );
 // returns true
 ```
 
-To avoid unnecessary memory allocation, the function supports providing an output (destination) object.
-
-```javascript
-var Float64Array = require( '@stdlib/array-float64' );
-
-var out = new Float64Array( 2 );
-
-var y = frexp( out, 4.0 );
-// returns <Float64Array>[ 0.5, 3 ]
-
-var bool = ( y === out );
-// returns true
-```
-
 If provided positive or negative zero, `NaN`, or positive or negative `infinity`, the function returns a two-element `array` containing the input value and an exponent equal to `0`.
 
 ```javascript
@@ -109,6 +95,22 @@ out = frexp( -Infinity );
 ```
 
 For all other numeric input values, the [absolute value][@stdlib/math/base/special/abs] of the normalized fraction resides on the interval `[0.5,1)`.
+
+#### frexp.assign( x, out, stride, offset )
+
+Splits a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two and assigns results to a provided output array.
+
+```javascript
+var Float64Array = require( '@stdlib/array-float64' );
+
+var out = new Float64Array( 2 );
+
+var y = frexp.assign( 4.0, out, 1, 0 );
+// returns <Float64Array>[ 0.5, 3 ]
+
+var bool = ( y === out );
+// returns true
+```
 
 </section>
 
@@ -239,8 +241,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-base-special-frexp.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-base-special-frexp
 
-[test-image]: https://github.com/stdlib-js/math-base-special-frexp/actions/workflows/test.yml/badge.svg?branch=v0.0.7
-[test-url]: https://github.com/stdlib-js/math-base-special-frexp/actions/workflows/test.yml?query=branch:v0.0.7
+[test-image]: https://github.com/stdlib-js/math-base-special-frexp/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/math-base-special-frexp/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-base-special-frexp/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-frexp?branch=main
