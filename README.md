@@ -24,20 +24,30 @@ limitations under the License.
 
 > Split a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-frexp
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@esm/index.mjs';
+var frexp = require( '@stdlib/math-base-special-frexp' );
 ```
 
 #### frexp( x )
@@ -52,7 +62,7 @@ var out = frexp( 4.0 );
 By default, the function returns the normalized fraction and the exponent as a two-element `array`. The normalized fraction and exponent satisfy the relation `x = frac * 2^exp`.
 
 ```javascript
-import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@esm/index.mjs';
+var pow = require( '@stdlib/math-base-special-pow' );
 
 var x = 4.0;
 var out = frexp( x );
@@ -91,7 +101,7 @@ For all other numeric input values, the [absolute value][@stdlib/math/base/speci
 Splits a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two and assigns results to a provided output array.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var out = new Float64Array( 2 );
 
@@ -113,7 +123,7 @@ var bool = ( y === out );
 -   Care should be taken when reconstituting a [double-precision floating-point number][ieee754] from a normalized fraction and an exponent. For example,
 
     ```javascript
-    import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@esm/index.mjs';
+    var pow = require( '@stdlib/math-base-special-pow' );
 
     var x = 8.988939926493918e+307; // x ~ 2^1023
 
@@ -139,17 +149,12 @@ var bool = ( y === out );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
-import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@esm/index.mjs';
-import BIAS from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-exponent-bias@esm/index.mjs';
-import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@esm/index.mjs';
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var round = require( '@stdlib/math-base-special-round' );
+var pow = require( '@stdlib/math-base-special-pow' );
+var BIAS = require( '@stdlib/constants-float64-exponent-bias' );
+var frexp = require( '@stdlib/math-base-special-frexp' );
 
 var sign;
 var frac;
@@ -177,10 +182,6 @@ for ( i = 0; i < 100; i++ ) {
     }
     console.log( '%d = %d * 2^%d = %d', x, f[ 0 ], f[ 1 ], v );
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -210,7 +211,7 @@ for ( i = 0; i < 100; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -272,11 +273,11 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [ieee754]: https://en.wikipedia.org/wiki/IEEE_754-1985
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/esm
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/ldexp]: https://github.com/stdlib-js/math-base-special-ldexp/tree/esm
+[@stdlib/math/base/special/ldexp]: https://github.com/stdlib-js/math-base-special-ldexp
 
 <!-- </related-links> -->
 
