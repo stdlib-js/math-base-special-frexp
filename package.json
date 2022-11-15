@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/math-base-special-frexp",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Split a double-precision floating-point number into a normalized fraction and an integer power of two.",
   "license": "Apache-2.0",
   "author": {
