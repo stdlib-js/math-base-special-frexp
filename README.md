@@ -35,30 +35,20 @@ limitations under the License.
 
 > Split a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two.
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/math-base-special-frexp
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var frexp = require( '@stdlib/math-base-special-frexp' );
+import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@deno/mod.js';
+```
+
+You can also import the following named exports from the package:
+
+```javascript
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@deno/mod.js';
 ```
 
 #### frexp( x )
@@ -73,7 +63,7 @@ var out = frexp( 4.0 );
 By default, the function returns the normalized fraction and the exponent as a two-element `array`. The normalized fraction and exponent satisfy the relation `x = frac * 2^exp`.
 
 ```javascript
-var pow = require( '@stdlib/math-base-special-pow' );
+import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@deno/mod.js';
 
 var x = 4.0;
 var out = frexp( x );
@@ -112,7 +102,7 @@ For all other numeric input values, the [absolute value][@stdlib/math/base/speci
 Splits a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two and assigns results to a provided output array.
 
 ```javascript
-var Float64Array = require( '@stdlib/array-float64' );
+import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
 
 var out = new Float64Array( 2 );
 
@@ -134,7 +124,7 @@ var bool = ( y === out );
 -   Care should be taken when reconstituting a [double-precision floating-point number][ieee754] from a normalized fraction and an exponent. For example,
 
     ```javascript
-    var pow = require( '@stdlib/math-base-special-pow' );
+    import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@deno/mod.js';
 
     var x = 8.988939926493918e+307; // x ~ 2^1023
 
@@ -161,11 +151,11 @@ var bool = ( y === out );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var randu = require( '@stdlib/random-base-randu' );
-var round = require( '@stdlib/math-base-special-round' );
-var pow = require( '@stdlib/math-base-special-pow' );
-var BIAS = require( '@stdlib/constants-float64-exponent-bias' );
-var frexp = require( '@stdlib/math-base-special-frexp' );
+import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
+import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
+import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@deno/mod.js';
+import BIAS from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-exponent-bias@deno/mod.js';
+import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@deno/mod.js';
 
 var sign;
 var frac;
@@ -201,97 +191,7 @@ for ( i = 0; i < 100; i++ ) {
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/math/base/special/frexp.h"
-```
-
-#### stdlib_base_frexp( x, frac, exp )
-
-Splits a [double-precision floating-point number][ieee754] into a normalized fraction and an integer power of two.
-
-```c
-#include <stdint.h>
-
-double frac;
-int32_t exp;
-stdlib_base_frexp( 4.0, &frac, &exp );
-```
-
-The function accepts the following arguments:
-
--   **x**: `[in] double` input value.
--   **frac**: `[out] double*` destination for the normalized fraction.
--   **exp**: `[out] int32_t*` destination for the integer power of two.
-
-
-```c
-void stdlib_base_frexp( const double x, double *frac, int32_t *exp );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/math/base/special/frexp.h"
-#include <stdint.h>
-#include <stdio.h>
-#include <inttypes.h>
-
-int main( void ) {
-    const double x[] = { 4.0, 0.0, -0.0, 1.0, -1.0, 3.14, -3.14, 1.0e308, -1.0e308, 1.0/0.0, -1.0/0.0, 0.0/0.0 };
-
-    double frac;
-    int32_t exp;
-    int i;
-    for ( i = 0; i < 12; i++ ) {
-        stdlib_base_frexp( x[i], &frac, &exp );
-        printf( "x: %f => frac: %f, exp: %" PRId32 "\n", x[i], frac, exp );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -316,7 +216,7 @@ int main( void ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -378,11 +278,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [ieee754]: https://en.wikipedia.org/wiki/IEEE_754-1985
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/deno
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/ldexp]: https://github.com/stdlib-js/math-base-special-ldexp
+[@stdlib/math/base/special/ldexp]: https://github.com/stdlib-js/math-base-special-ldexp/tree/deno
 
 <!-- </related-links> -->
 
