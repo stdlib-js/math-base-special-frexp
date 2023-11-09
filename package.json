@@ -47,7 +47,7 @@
     "@stdlib/number-float64-base-from-words": "^0.1.1",
     "@stdlib/number-float64-base-normalize": "^0.1.1",
     "@stdlib/number-float64-base-to-words": "^0.1.1",
-    "@stdlib/types": "^0.1.0",
+    "@stdlib/types": "^0.2.0",
     "@stdlib/utils-define-nonenumerable-read-only-property": "^0.1.1",
     "@stdlib/utils-library-manifest": "^0.1.1"
   },
@@ -56,7 +56,7 @@
     "@stdlib/assert-has-own-property": "^0.1.1",
     "@stdlib/assert-is-array": "^0.1.1",
     "@stdlib/assert-is-browser": "^0.1.1",
-    "@stdlib/bench": "^0.1.0",
+    "@stdlib/bench": "^0.2.0",
     "@stdlib/constants-float64-exponent-bias": "^0.1.1",
     "@stdlib/constants-float64-ninf": "^0.1.1",
     "@stdlib/constants-float64-pinf": "^0.1.1",
