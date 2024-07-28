@@ -42,13 +42,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-frexp/tags). For example,
+
+```javascript
 import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@v0.2.3-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@v0.2.3-esm/index.mjs';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@esm/index.mjs';
 ```
 
 #### frexp( x )
@@ -160,7 +165,7 @@ import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/i
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
 import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@esm/index.mjs';
 import BIAS from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-exponent-bias@esm/index.mjs';
-import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@v0.2.3-esm/index.mjs';
+import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@esm/index.mjs';
 
 var sign;
 var frac;
