@@ -58,7 +58,6 @@
     "@stdlib/array-float64": "^0.2.2",
     "@stdlib/assert-has-own-property": "^0.2.2",
     "@stdlib/assert-is-array": "^0.2.2",
-    "@stdlib/assert-is-browser": "^0.2.2",
     "@stdlib/assert-is-float64array": "^0.2.2",
     "@stdlib/constants-float64-exponent-bias": "^0.2.2",
     "@stdlib/constants-float64-ninf": "^0.2.2",
