@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-06-12)
+## Unreleased (2025-06-14)
 
 <section class="reverts">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`56cd0bf`](https://github.com/stdlib-js/stdlib/commit/56cd0bfb6e3d98349a2062e3ac26668f58ba09bb) - **refactor:** use tuple for return type _(by Karan Anand)_
 -   [`a2cfe0e`](https://github.com/stdlib-js/stdlib/commit/a2cfe0e3fe5167301372d22dbae8e8b19917f77c) - **test:** update test messages according to current project conventions _(by Karan Anand)_
 -   [`c5ccaff`](https://github.com/stdlib-js/stdlib/commit/c5ccaff1e7697684168c649fd87882b259664c73) - **test:** remove the use of `IS_BROWSER` from test files _(by Karan Anand)_
 -   [`63b7891`](https://github.com/stdlib-js/stdlib/commit/63b7891a03385347320f89e6fe0458f3b5fd198c) - **refactor:** use in-house macros for building native addon bindings _(by Karan Anand)_
