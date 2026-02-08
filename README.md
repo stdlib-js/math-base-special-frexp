@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@deno/mod.js';
+import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@v0.2.4-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@deno/mod.js';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@v0.2.4-deno/mod.js';
 ```
 
 #### frexp( x )
@@ -155,7 +155,7 @@ import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
 import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@deno/mod.js';
 import BIAS from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-exponent-bias@deno/mod.js';
-import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@deno/mod.js';
+import frexp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-frexp@v0.2.4-deno/mod.js';
 
 var sign;
 var frac;
